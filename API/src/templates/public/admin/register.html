@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block content %}
+
+<header>
+	<h1>Registrar usuário:</h1>
+</header>
+
+<form action="/" method="POST">
+	<input
+		type="text"
+		name="regist"
+		maxlength="4"
+		placeholder="Digite o número de registro"
+		required
+	/>
+	<input type="email" name="email" placeholder="Digite o email" required />
+	<input
+		type="text"
+		name="name"
+		maxlength="15"
+		placeholder="Digite o nome"
+		required
+	/>
+	<input
+		type="text"
+		name="last_name"
+		maxlength="15"
+		placeholder="Digite o sobrenome"
+		required
+	/>
+	<input
+		list="departament"
+		name="departament"
+		placeholder="Escolha o departamento"
+		required
+	/>
+	<input list="role" name="role" placeholder="Escolha o cargo" required />
+	<input type="file" name="image" placeholder="Selecione uma imagem" />
+
+	<button type="submit">Cadastrar</button>
+
+	<datalist id="departament">
+		<option value="Carga" />
+		<option value="Financeiro" />
+		<option value="Logistica" />
+		<option value="Materiais" />
+		<option value="Suprimentos" />
+	</datalist>
+
+	<datalist id="role">
+		<option value="Almoxarife" />
+		<option value="Analista" />
+		<option value="Manutenção" />
+		<option value="Operador" />
+		<option value="Planejador" />
+		<option value="Transportador" />
+	</datalist>
+</form>
+
+{% endblock %}
